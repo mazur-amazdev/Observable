@@ -1,5 +1,5 @@
 name: dart_subject
-description: A starting point for Dart libraries or applications.
+description: Used for pumping data through different contexts
 version: 1.0.0
 repository: https://github.com/mazur-amazdev/Observable
 
