@@ -1,6 +1,6 @@
 name: dart_subject
 description: Used for pumping data through different contexts
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/mazur-amazdev/Observable
 
 environment:
