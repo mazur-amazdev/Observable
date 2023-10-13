@@ -1,4 +1,4 @@
-import 'package:observable/observable.dart';
+import 'package:DartSubject/DartSubject.dart';
 import 'package:test/test.dart';
 
 void main() {
