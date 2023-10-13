@@ -1,4 +1,4 @@
-import 'package:observable/DartSubject.dart';
+import 'package:dart_subject/dart_subject.dart';
 
 class SubjectContainer {
   /// defining a subject
