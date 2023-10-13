@@ -278,13 +278,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "observable",
+      "name": "dart_subject",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-10-06T11:38:45.474570Z",
+  "generated": "2023-10-13T09:58:27.049022Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }

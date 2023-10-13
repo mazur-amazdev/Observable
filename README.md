@@ -4,7 +4,6 @@
 
 Observe and emit through different contextes. Be aware that you should be able to track the deinitialization to remove observes from a subject to prevent memoryleaks.
 
-
 ## Usage
 
 I recommend to build a SubjectContainer, to be fully aware of the used subject throughout your applications an be sure each observer and emitter are connected to the same subject to achieve getting infos in different contexts.
@@ -20,7 +19,7 @@ class SubjectContainer {
 
 In the next step define a class that wants to be able to observe a value in this case it observes an integer.
 
-```dart 
+```dart
 /// the counter observer
 class CounterObserver extends Observer {
     /// call the super constructor with the unsubcribe function
@@ -43,7 +42,7 @@ class CounterObserver extends Observer {
 }
 ```
 
-For having a useful observer we need someone that wants to emit via the defined subject 
+For having a useful observer we need someone that wants to emit via the defined subject.
 
 ```dart
 /// the counter emitter
@@ -66,7 +65,9 @@ class CounterEmitter extends Emitter {
     }
 }
 ```
+
 and the usage in the application would look something like that in a simple way, but is able to launch emits through different contexts via dependency injection by the subject container
+
 ```dart
 /// application starting point
 void main() {
