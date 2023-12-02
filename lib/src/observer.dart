@@ -1,11 +1,9 @@
 // ignore: unused_import
 import 'dart:io';
 
-abstract class Observer {
-  const Observer(this.unsubscribe);
-
+mixin Observer {
   /// the injected unsubscribe closure to remove from subject
-  final Function(Observer) unsubscribe;
+  late final Function(Observer) unsubscribe;
 
   /// the update void that gets triggered
   void update(dynamic observable);

@@ -5,8 +5,10 @@ class SubjectContainer {
   var countSubject = Subject<int>();
 }
 
-class CounterObserver extends Observer {
-  CounterObserver(super.unsubscribe);
+class CounterObserver implements Observer {
+  CounterObserver(Function(Observer) unsubscribe) {
+    unsubscribe = unsubscribe;
+  }
   int count = 0;
 
   @override
@@ -18,6 +20,14 @@ class CounterObserver extends Observer {
         break;
     }
   }
+
+  @override
+  void deinit() {
+    unsubscribe(this);
+  }
+
+  @override
+  late Function(Observer) unsubscribe;
 }
 
 class CounterEmitter extends Emitter {

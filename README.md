@@ -20,25 +20,29 @@ class SubjectContainer {
 In the next step define a class that wants to be able to observe a value in this case it observes an integer.
 
 ```dart
-/// the counter observer
-class CounterObserver extends Observer {
-    /// call the super constructor with the unsubcribe function
-    CounterObserver(super.unsubscribe);
-    /// the count variable that is updated by observing a subject
-    int count = 0;
+class CounterObserver implements Observer {
+  CounterObserver(Function(Observer) unsubscribe) {
+    unsubscribe = unsubscribe;
+  }
+  int count = 0;
 
-    @override
-    void update(observable) {
-        /// get a dynamic type observable and check by runtime type
-        switch (observable.runtimeType) {
-            /// in this case we only subscribed to one observable ande proceed with logic if case int is true
-            case int:
-                /// update our count variable
-                count = observable;
-            default:
-                break;
-        }
+  @override
+  void update(observable) {
+    switch (observable.runtimeType) {
+      case int:
+        count = observable;
+      default:
+        break;
     }
+  }
+
+  @override
+  void deinit() {
+    unsubscribe(this);
+  }
+
+  @override
+  late Function(Observer) unsubscribe;
 }
 ```
 
